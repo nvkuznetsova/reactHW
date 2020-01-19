@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "apple",
+      "description": "tasty",
+      "price": 1,
+      "category": "fruits",
+      "isAvailable": "true"
+    },
+    {
+      "id": 2,
+      "name": "orange",
+      "description": "tasty nutritious",
+      "price": 1,
+      "category": "fruits",
+      "isAvailable": "true"
+    },
+    {
+      "id": 3,
+      "name": "salad",
+      "description": "nutritious",
+      "price": 2,
+      "category": "vegetables",
+      "isAvailable": "true"
+    },
+    {
+      "id": 4,
+      "name": "banana",
+      "description": "tasty",
+      "price": 2,
+      "category": "fruits",
+      "isAvailable": "false"
+    },
+    {
+      "id": 5,
+      "name": "capuccino",
+      "description": "energetic",
+      "price": 2,
+      "category": "coffee",
+      "isAvailable": "true"
+    },
+    {
+      "id": 6,
+      "name": "tomato",
+      "description": "tasty",
+      "price": 1.5,
+      "category": "vegetables",
+      "isAvailable": "true"
+    },
+    {
+      "id": 7,
+      "name": "chocolate",
+      "description": "sweet",
+      "price": 1,
+      "category": "sweets",
+      "isAvailable": "false"
+    },
+    {
+      "id": 8,
+      "name": "latte",
+      "description": "tasty energetic",
+      "price": 1.5,
+      "category": "coffee",
+      "isAvailable": "true"
+    },
+    {
+      "id": 9,
+      "name": "green tea",
+      "description": "energetic",
+      "price": 1.5,
+      "category": "tea",
+      "isAvailable": "true"
+    },
+    {
+      "id": 10,
+      "name": "sandwich",
+      "description": "with cheese",
+      "price": 2,
+      "category": "fastfood",
+      "isAvailable": "true"
+    }
+  ],
+  "orders": []
+}
