@@ -1,7 +1,10 @@
 import { ProductsActionTypes, ProductsActions} from './actions';
 import { ProductsState, initialState } from './products-state';
 
-export const productsReducer = (state = initialState, action: ProductsActions): ProductsState => {
+export const productsReducer = (
+  state = initialState,
+  action: ProductsActions,
+  ): ProductsState => {
   switch(action.type) {
     case ProductsActionTypes.PRODUCTS_LOAD_START: 
       return {

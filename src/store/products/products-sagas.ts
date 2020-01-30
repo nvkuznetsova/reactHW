@@ -1,3 +1,4 @@
+import { SagaIterator } from 'redux-saga';
 import { put, takeLatest, all, call } from 'redux-saga/effects';
 import { getProducts } from '../../api/api';
 
@@ -7,7 +8,7 @@ import {
   productsLoadError,
 } from './actions';
 
-export function* fetchProducts() {
+export function* fetchProducts(): SagaIterator {
   try {
     const { data: products } = yield call(getProducts);
     yield put(productsLoadSuccess(products));
@@ -16,7 +17,7 @@ export function* fetchProducts() {
   }
 }
 
-export function* productsWatcher() {
+export function* productsWatcher(): SagaIterator {
   yield all([
     takeLatest(ProductsActionTypes.PRODUCTS_LOAD_START, fetchProducts),
   ]);

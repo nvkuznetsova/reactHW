@@ -7,7 +7,7 @@ export interface ProductsState {
   error: Error | string;
 }
 
-export const initialState = {
+export const initialState: ProductsState = {
   data: [],
   isLoading: false,
   error: '',
