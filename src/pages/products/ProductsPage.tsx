@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 
 import { Product } from 'src/domain/Product';
 
+import { MainLayout } from '../../components/MainLayout/MainLayout';
+
 type ProductsProps = {
   products: ReadonlyArray<Product>,
   isLoading: boolean,
@@ -36,10 +38,12 @@ export class ProductsPage extends Component<ProductsProps> {
     }
 
     return (
-      <div className="d-flex flex-wrap justify-content-evenly">
-        {products.map((product, index) => {
-          return <div className="col-md-3 align-self-center" key={index}>{product.name}</div>
-        })}
-      </div>)
+      <MainLayout>
+        <div className="d-flex flex-wrap justify-content-evenly">
+          {products.map((product, index) => {
+            return <div className="col-md-3 align-self-center" key={index}>{product.name}</div>
+          })}
+        </div>
+      </MainLayout>)
   }
 }
