@@ -2,12 +2,10 @@ import { call } from 'redux-saga/effects';
 import { expectSaga } from 'redux-saga-test-plan';
 import { throwError } from 'redux-saga-test-plan/providers';
 
+import * as productsApi from 'src/api/products';
 import { ProductsActionTypes, ProductsActions } from '../actions';
 import { productsReducer } from '../products-reducer';
 import { initialState } from '../products-state';
-
-import * as api from '../../../api/api';
-
 import { fetchProducts } from '../products-sagas';
 
 describe('Products Sagas', () => {
@@ -23,7 +21,7 @@ describe('Products Sagas', () => {
 
     const saga = expectSaga(fetchProducts)
       .provide([
-        [call(api.getProducts), mockData],
+        [call(productsApi.getProducts), mockData],
       ])
       .withReducer(productsReducer, initialState)
 
@@ -36,7 +34,7 @@ describe('Products Sagas', () => {
 
     const saga = expectSaga(fetchProducts)
       .provide([
-        [call(api.getProducts), throwError(mockError)],
+        [call(productsApi.getProducts), throwError(mockError)],
       ])
       .withReducer(productsReducer, initialState)
 

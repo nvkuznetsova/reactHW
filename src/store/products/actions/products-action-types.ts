@@ -1,4 +1,4 @@
-import { Product } from '../../../domain/Product';
+import { Product } from 'src/domain/Product';
 
 export enum ProductsActionTypes {
   PRODUCTS_LOAD_START = 'PRODUCTS_LOAD_START',

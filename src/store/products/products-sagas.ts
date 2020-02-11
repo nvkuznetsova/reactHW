@@ -1,6 +1,7 @@
 import { SagaIterator } from 'redux-saga';
 import { put, takeLatest, all, call } from 'redux-saga/effects';
-import { getProducts } from '../../api/api';
+
+import { getProducts } from 'src/api/products';
 
 import {
   ProductsActionTypes,

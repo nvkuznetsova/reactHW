@@ -1,7 +1,8 @@
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
 import React, { Component } from 'react';
-import { Product } from '../../domain/Product';
+
+import { Product } from 'src/domain/Product';
 
 type ProductsProps = {
   products: ReadonlyArray<Product>,
@@ -22,14 +23,23 @@ export class ProductsPage extends Component<ProductsProps> {
       isLoading,
       error,
     } = this.props;
- 
+
+    if (isLoading) {
+      return <span>Loading</span>;
+    }
+
+    const hasError = !isLoading && !isEmpty(error);
+
+    if (hasError) {
+      const errorMessage = get(error, 'message', 'error');
+      return <div>{errorMessage}</div>
+    }
+
     return (
-    <div className="d-flex flex-wrap justify-content-evenly">
-      {isLoading && <span>Loading</span>}
-      {!isLoading && products.map((product, index) => {
-      return <div className="col-md-3 align-self-center" key={index}>{product.name}</div>
-      })}
-      {!isLoading && !isEmpty(error) && <div>{get(error, 'message', 'error')}</div>}
-    </div>)
+      <div className="d-flex flex-wrap justify-content-evenly">
+        {products.map((product, index) => {
+          return <div className="col-md-3 align-self-center" key={index}>{product.name}</div>
+        })}
+      </div>)
   }
 }

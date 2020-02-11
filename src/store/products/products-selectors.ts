@@ -1,6 +1,6 @@
+import { Product } from 'src/domain/Product';
 import { AppState } from '../app-state';
 import { ProductsState } from './products-state';
-import { Product } from '../../domain/Product';
 
 export const getCurrentState = (state: AppState): ProductsState => state.products;
 export const getData = (state: ProductsState): ReadonlyArray<Product> => state.data;

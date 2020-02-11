@@ -1,10 +1,10 @@
+import { Product } from 'src/domain/Product';
 import {
   ProductsActionTypes,
   productsLoadStart,
   productsLoadSuccess,
   productsLoadError,
  } from '..';
-import { Product } from '../../../../domain/Product';
 
  describe('Products actions', () => {
    it('should return proper object on PRODUCTS_LOAD_START', () => {

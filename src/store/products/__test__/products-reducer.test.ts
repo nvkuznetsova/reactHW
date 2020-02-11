@@ -1,23 +1,36 @@
 import { ProductsActionTypes, ProductsActions } from '../actions';
-
 import { productsReducer } from '../products-reducer';
+import { ProductsState, initialState } from '../products-state';
 
 describe('ProductsReducer', () => {
-  it('should return new state on PRODUCTS_LOAD_START', () => {
-    const initState = {
-      isLoading: false,
-      error: '',
-      data: [],
-    }
+  const setState = (fields = {}): ProductsState => ({
+    ...initialState,
+    ...fields,
+  });
+
+  describe('PRODUCTS_LOAD_START', () => {
+    const initState = setState();
+    const errorState = setState({ error: 'error' });
 
     const action: ProductsActions = { type: ProductsActionTypes.PRODUCTS_LOAD_START };
-    expect(productsReducer(initState, action)).toEqual({
-      ...initState,
-      isLoading: true,
+
+    it('should return new state on PRODUCTS_LOAD_START', () => {
+      expect(productsReducer(initState, action)).toEqual({
+        ...initState,
+        isLoading: true,
+      });
+    });
+
+    it('should return propper state on PRODUCTS_LOAD_START after error', () => {
+      expect(productsReducer(errorState, action)).toEqual({
+        ...errorState,
+        isLoading: true,
+        error: '',
+      });
     });
   });
 
-  it('should return new state on PRODUCTS_LOAD_SUCCESS', () => {
+  describe('PRODUCTS_LOAD_SUCCESS', () => {
     const data = [
       {
         id: 1,
@@ -29,57 +42,32 @@ describe('ProductsReducer', () => {
       }
     ];
 
-    const prevState = {
-      isLoading: true,
-      error: '',
-      data: [],
-    }
+    const prevState = setState({ isLoading: true });
 
-    const newState = {
-      ...prevState,
-      isLoading: false,
-      data,
-    };
+    const newState = setState({ data });
 
     const action: ProductsActions = { 
       type: ProductsActionTypes.PRODUCTS_LOAD_SUCCESS,
       products: [...data],
     }
-    expect(productsReducer(prevState, action)).toEqual(newState);
+
+    it('should return new state on PRODUCTS_LOAD_SUCCESS', () => {
+      expect(productsReducer(prevState, action)).toEqual(newState);
+    });
   });
 
-  it('should return new state on PRODUCTS_LOAD_ERROR', () => {
-    const prevState = {
-      isLoading: true,
-      error: '',
-      data: [],
-    }
+  describe('PRODUCTS_LOAD_ERROR', () => {
+    const prevState = setState({ isLoading: true });
 
-    const newState = {
-      ...prevState,
-      isLoading: false,
-      error: 'error',
-    };
+    const newState = setState({ error: 'error' });
 
     const action: ProductsActions = {
       type: ProductsActionTypes.PRODUCTS_LOAD_ERROR,
       error: 'error',
     };
-    expect(productsReducer(prevState, action)).toEqual(newState);
-  });
 
-  it('should return propper state on PRODUCTS_LOAD_START after error', () => {
-    const errorState = {
-      isLoading: false,
-      error: 'error',
-      data: [],
-    }
-
-    const action: ProductsActions = { type: ProductsActionTypes.PRODUCTS_LOAD_START };
-    expect(productsReducer(errorState, action)).toEqual({
-      ...errorState,
-      isLoading: true,
-      error: '',
+    it('should return new state on PRODUCTS_LOAD_ERROR', () => {
+      expect(productsReducer(prevState, action)).toEqual(newState);
     });
   });
 });

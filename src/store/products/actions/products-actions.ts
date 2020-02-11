@@ -1,4 +1,4 @@
-import { Product } from '../../../domain/Product';
+import { Product } from 'src/domain/Product';
 import {
   ProductsActionTypes, 
   ProductsActions,
