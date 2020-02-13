@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Button.styles.css';
 
-type ButtonProps = {
+export type ButtonProps = {
   btnLabel: string,
   btnClassName: string,
   disabled: boolean,

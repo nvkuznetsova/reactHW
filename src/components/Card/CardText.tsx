@@ -1,6 +1,6 @@
 import React from 'react';
 
-type CardTextProps = {
+export type CardTextProps = {
   cardText: string,
 };
 

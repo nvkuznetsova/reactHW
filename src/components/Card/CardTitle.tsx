@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Badge } from 'src/components/Badge/Badge'
 
-type CardTitleProps = {
+export type CardTitleProps = {
   name: string,
   badgeText: string,
   badgeClassName: string,
