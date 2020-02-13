@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should match snapshot 1`] = `
+<button
+  className="btn btn-class"
+  disabled={false}
+  onClick={[Function]}
+>
+  Button
+</button>
+`;
+
+exports[`Button should match snapshot if button disabled 1`] = `
+<button
+  className="btn btn-class"
+  disabled={true}
+  onClick={[Function]}
+>
+  Button
+</button>
+`;

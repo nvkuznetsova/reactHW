@@ -1,6 +1,6 @@
 import React from 'react';
 
-type BadgeProps = {
+export type BadgeProps = {
   badgeText: string,
   badgeClassName: string,
 };
