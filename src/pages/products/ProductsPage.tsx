@@ -4,7 +4,10 @@ import React, { Component, ReactNode } from 'react';
 
 import { badgeTexts } from 'src/constants/badgeTexts';
 import { btnLabels } from 'src/constants/btnLabels';
+import { Cart } from 'src/domain/Cart';
 import { Product } from 'src/domain/Product';
+import { CartActions } from 'src/store/cart/actions';
+import { ProductsActions } from 'src/store/products/actions';
 import { MainLayout } from 'src/components/MainLayout/MainLayout';
 import { Button } from 'src/components/Button/Button';
 import { 
@@ -20,13 +23,24 @@ type ProductsProps = {
   products: ReadonlyArray<Product>,
   isLoading: boolean,
   error: Error | string,
-  getProducts: () => void,
+  getProducts: () => ProductsActions,
+  buyProduct: (cartItem: Cart) => CartActions,
 };
 
 export class ProductsPage extends Component<ProductsProps> {
   componentDidMount() {
     const { getProducts } = this.props;
     getProducts();
+  }
+
+  buyProduct(product: Product): void {
+    const { buyProduct } = this.props;
+
+    const cartItem: Cart = {
+      ...product,
+      count: 1,
+    }
+    buyProduct(cartItem);
   }
 
   renderCard(product: Product): ReactNode {
@@ -61,7 +75,7 @@ export class ProductsPage extends Component<ProductsProps> {
           btnLabel={btnLabels.buyButton}
           btnClassName={btnClassName}
           disabled={!isAvailable}
-          click={() => null}
+          click={this.buyProduct.bind(this, product)}
           />
       </CardBody>
     )

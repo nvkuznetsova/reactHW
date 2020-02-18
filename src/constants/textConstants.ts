@@ -1,0 +1,1 @@
+export const emptyCart = 'Your cart is empty';

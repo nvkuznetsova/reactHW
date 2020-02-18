@@ -5,14 +5,14 @@ import './Button.styles.css';
 export type ButtonProps = {
   btnLabel: string,
   btnClassName: string,
-  disabled: boolean,
-  click: () => void,
+  disabled?: boolean,
+  click: (prop?: any) => void,
 };
 
 export const Button: React.FC<ButtonProps> = ({ 
   btnLabel,
   btnClassName,
-  disabled,
+  disabled = false,
   click,
 }) => (
   <button
