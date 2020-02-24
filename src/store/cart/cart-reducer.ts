@@ -1,4 +1,4 @@
-import { findItemById, filterItemById } from "src/utils/items";
+import { findItemById, filterArrayByItemId } from "src/utils/items";
 import { CartActions, CartActionTypes } from "./actions";
 import { initialState, CartState } from "./cart-state";
 
@@ -28,7 +28,7 @@ export const cartReducer = (
       const item = findItemById(state.cartItems, action.cartItemId);
       item!.count -= 1;
       if (item!.count === 0) {
-        const cartItems = filterItemById(state.cartItems, action.cartItemId);
+        const cartItems = filterArrayByItemId(state.cartItems, action.cartItemId);
 
         return {
           ...state,
@@ -43,7 +43,7 @@ export const cartReducer = (
       }
 
     case CartActionTypes.CART_REMOVE_ITEM:
-      const cartItems = filterItemById(state.cartItems, action.cartItemId);
+      const cartItems = filterArrayByItemId(state.cartItems, action.cartItemId);
       const total = cartItems.reduce((sum, item) => sum += item.price * item.count, 0);
 
       return {

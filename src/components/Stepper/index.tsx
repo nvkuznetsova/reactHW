@@ -12,11 +12,17 @@ export type StepperProps = {
 
 export const Stepper: FC<StepperProps> = ({ value, increment, decrement }) => (
   <div className="stepper border-primary text-primary">
-    <span onClick={decrement}>
+    <span 
+      data-marker="decrement"  
+      onClick={decrement}
+    >
       <FontAwesomeIcon icon={faMinus} />
     </span>
     <span>{value}</span>
-   <span onClick={increment}>
+   <span
+     data-marker="increment"
+     onClick={increment}
+    >
      <FontAwesomeIcon icon={faPlus} />
    </span>
   </div>

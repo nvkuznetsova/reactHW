@@ -6,7 +6,14 @@ exports[`MainLayout should match snapshot 1`] = `
 >
   <header
     className="main-header"
-  />
+  >
+    <Link
+      className="btn btn-success"
+      to="/cart"
+    >
+      Cart
+    </Link>
+  </header>
   <section
     className="main-content"
   >

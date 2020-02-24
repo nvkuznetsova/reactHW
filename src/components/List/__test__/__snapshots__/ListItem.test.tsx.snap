@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListItem should match snapshot 1`] = `
+<li
+  className="list-group-item "
+>
+  <span>
+    Test
+  </span>
+</li>
+`;
