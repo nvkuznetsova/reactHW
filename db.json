@@ -6,7 +6,7 @@
       "description": "tasty",
       "price": 1,
       "category": "fruits",
-      "isAvailable": "true"
+      "isAvailable": true
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "description": "tasty nutritious",
       "price": 1,
       "category": "fruits",
-      "isAvailable": "true"
+      "isAvailable": true
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "description": "nutritious",
       "price": 2,
       "category": "vegetables",
-      "isAvailable": "true"
+      "isAvailable": true
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "description": "tasty",
       "price": 2,
       "category": "fruits",
-      "isAvailable": "false"
+      "isAvailable": false
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "description": "energetic",
       "price": 2,
       "category": "coffee",
-      "isAvailable": "true"
+      "isAvailable": true
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "description": "tasty",
       "price": 1.5,
       "category": "vegetables",
-      "isAvailable": "true"
+      "isAvailable": true
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "description": "sweet",
       "price": 1,
       "category": "sweets",
-      "isAvailable": "false"
+      "isAvailable": false
     },
     {
       "id": 8,
@@ -62,7 +62,7 @@
       "description": "tasty energetic",
       "price": 1.5,
       "category": "coffee",
-      "isAvailable": "true"
+      "isAvailable": true
     },
     {
       "id": 9,
@@ -70,7 +70,7 @@
       "description": "energetic",
       "price": 1.5,
       "category": "tea",
-      "isAvailable": "true"
+      "isAvailable": true
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "description": "with cheese",
       "price": 2,
       "category": "fastfood",
-      "isAvailable": "true"
+      "isAvailable": true
     }
   ],
   "orders": []
