@@ -3,17 +3,18 @@ import React from 'react';
 import './Button.styles.css';
 
 export type ButtonProps = {
-  btnLabel: string,
+  btnLabel?: string,
   btnClassName: string,
   disabled?: boolean,
   click: (prop?: any) => void,
 };
 
 export const Button: React.FC<ButtonProps> = ({ 
-  btnLabel,
+  btnLabel = "",
   btnClassName,
   disabled = false,
   click,
+  children,
 }) => (
   <button
     className={`btn ${btnClassName}`}
@@ -21,5 +22,6 @@ export const Button: React.FC<ButtonProps> = ({
     onClick={click}
     >
       {btnLabel}
+      {children}
     </button>
 );

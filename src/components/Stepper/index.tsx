@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
 
+import { Icon } from '../Icon';
 import './Stepper.styles.css';
 
 export type StepperProps = {
@@ -16,14 +16,14 @@ export const Stepper: FC<StepperProps> = ({ value, increment, decrement }) => (
       data-marker="decrement"  
       onClick={decrement}
     >
-      <FontAwesomeIcon icon={faMinus} />
+      <Icon icon={faMinus} />
     </span>
     <span>{value}</span>
    <span
      data-marker="increment"
      onClick={increment}
     >
-     <FontAwesomeIcon icon={faPlus} />
+     <Icon icon={faPlus} />
    </span>
   </div>
 );

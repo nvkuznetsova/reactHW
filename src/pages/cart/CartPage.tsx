@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { faTrashAlt} from '@fortawesome/free-solid-svg-icons'
 
 import { Cart } from 'src/domain/Cart';
 import { CartActions } from 'src/store/cart/actions';
@@ -7,6 +8,7 @@ import { Stepper } from 'src/components/Stepper';
 import { List, ListItem } from 'src/components/List';
 import { Button } from 'src/components/Button/Button';
 import { Badge } from 'src/components/Badge/Badge';
+import { Icon } from 'src/components/Icon';
 
 import { EmptyCart } from './EmptyCart';
 import './CartPage.styles.css';
@@ -58,9 +60,10 @@ export const CartPage: FC<CartProps> = props => {
               />
               <Button
                 btnClassName="btn-danger"
-                btnLabel="X"
                 click={() => removeCartItem(item.id)}
-              />
+              >
+                <Icon icon={faTrashAlt} />
+              </Button>
             </ListItem>
           ))}
         </List>
