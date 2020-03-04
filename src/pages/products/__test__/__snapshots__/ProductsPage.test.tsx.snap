@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsPage should match snapshot 1`] = `
+<MainLayout>
+  <div
+    className="d-flex flex-wrap justify-content-evenly"
+  >
+    <div
+      className="col-lg-4 col-md-6 align-self-center"
+      key="0"
+    >
+      <Card
+        cardClassName="border-primary"
+      >
+        <CardBody>
+          <CardTitle
+            badgeClassName="badge-info"
+            badgeText="Available"
+            name="APPLE"
+          />
+          <CardText
+            cardText="Price: $1"
+          />
+          <Button
+            btnClassName="w-100 btn-primary"
+            btnLabel="Buy"
+            click={[Function]}
+            disabled={false}
+          />
+        </CardBody>
+      </Card>
+    </div>
+  </div>
+</MainLayout>
+`;
+
+exports[`ProductsPage should match snapshot on error 1`] = `
+<div>
+  error
+</div>
+`;
+
+exports[`ProductsPage should match snapshot on loading 1`] = `
+<span>
+  Loading
+</span>
+`;

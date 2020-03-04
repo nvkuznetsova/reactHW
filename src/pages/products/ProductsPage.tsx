@@ -19,7 +19,7 @@ import {
 
 const { available, unavailable } = badgeTexts;
 
-type ProductsProps = {
+export type ProductsProps = {
   products: ReadonlyArray<Product>,
   isLoading: boolean,
   error: Error | string,
@@ -33,7 +33,7 @@ export class ProductsPage extends Component<ProductsProps> {
     getProducts();
   }
 
-  buyProduct(product: Product): void {
+  buyProductEvent(product: Product): void {
     const { buyProduct } = this.props;
 
     const cartItem: Cart = {
@@ -75,7 +75,7 @@ export class ProductsPage extends Component<ProductsProps> {
           btnLabel={btnLabels.buyButton}
           btnClassName={btnClassName}
           disabled={!isAvailable}
-          click={this.buyProduct.bind(this, product)}
+          click={this.buyProductEvent.bind(this, product)}
           />
       </CardBody>
     )
